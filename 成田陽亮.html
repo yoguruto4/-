@@ -1,0 +1,155 @@
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>成田陽亮 自己紹介</title>
+<link rel="stylesheet" href="css/cssstyle.css">
+
+
+</head>
+
+
+<body>
+    <header>
+        <h1>自己紹介 - 成田陽亮</h1>
+        <p>株式会社サンソウシステムズ 新入社員</p>
+    </header>
+
+
+    <!-- プロフィール画像 -->
+    <section>
+       <img src="img/IMG_7503.jpg" alt="成田陽亮の写真" class="profile-pic" id="profilePic">
+
+
+    </section>
+
+    <!-- プロフィール表 -->
+    <section>
+        <h2>プロフィール</h2>
+        <table border="1">
+            <tr>
+                <th>名前</th>
+                <td>成田 陽亮（Narita Yosuke）</td>
+            </tr>
+            <tr>
+                <th>出身地</th>
+                <td>東京都</td>
+            </tr>
+            <tr>
+                <th>所属会社</th>
+                <td>株式会社サンソウシステムズ</td>
+            </tr>
+            <tr>
+                <th>趣味</th>
+                <td>ゲーム、音楽を聴く</td>
+            </tr>
+            <tr>
+                <th>特技</th>
+                <td>どこでも寝れること</td>
+            </tr>
+            <tr>
+                <th>目標</th>
+                <td>アサイン後に即戦力となれるようになること</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+  <h2>経歴の概要</h2>
+  <div class="horizontal-timeline">
+    <div class="event born">
+      <div class="event-title">生まれ</div>
+      <div class="event-desc">東京都で生まれる</div>
+      <div class="event-label">2001</div>
+    </div>
+    <div class="event highschool">
+      <div class="event-title">高校卒業</div>
+      <div class="event-desc">東京都立某高等学校を卒業</div>
+      <div class="event-label">2018</div>
+    </div>
+    <div class="event univ">
+      <div class="event-title">大学卒業</div>
+      <div class="event-desc">神奈川県の某私立大学<br>法学部卒業</div>
+      <div class="event-label">2024</div>
+    </div>
+    <div class="event work">
+  <!-- ▼ここにロゴ画像を追加 -->
+  <div class="event-icon">
+<a href="https://www.sansou.co.jp/" target="_blank" rel="noopener" class="event-icon">
+  <img src="img/294901023_416992047114274_794512046332877522_n.jpg" alt="Sansou Logo">
+</a>
+  </div>
+  <div class="event-title">入社</div>
+  <div class="event-desc">株式会社サンソウシステムズに入社</div>
+  <div class="event-label">2025</div>
+</div>
+</section>
+
+
+    <!-- 性格 -->
+    <section>
+        <h2>私の性格</h2>
+        <ul>
+            <li>好奇心旺盛</li>
+            <li>ポジティブ</li>
+            <li>負けず嫌い</li>
+            <li>几帳面</li>
+        </ul>
+    </section>
+
+    <!-- ①「好きなものを追加」ボタンでリストが増える -->
+<h2>好きなもの</h2>
+<section class="favorite">
+    <ul id="favoriteList">
+        <li>ゲーム（主にPCゲーム）</li>
+        <li>音楽を聴くこと（Mrs.GreeenAppleなど）</li>
+        <li>お酒を飲むこと（ハイボールが大好き）</li>
+    </ul>
+    <button onclick="addFavorite()">好きなものを追加</button>
+</section>
+
+
+
+    <!-- 強み -->
+    <section>
+        <h2>私の強み</h2>
+        <ul>
+            <li>コミュニケーション能力</li>
+            <li>行動力</li>
+            <li>自己管理能力</li>
+        </ul>
+    </section>
+
+    <!-- メッセージ -->
+    <section>
+<section>
+    <h2>メッセージ</h2>
+    <p id="message">
+       新入社員として一緒に働くことになり、とても嬉しく思います。<br>
+            そして、この会社での新たな挑戦に胸を膨らませており、皆さんと共に成長していけることを楽しみにしています。<br>
+            失敗や挫折もあるかもしれませんが、その度に一緒に立ち向かい、共に成長していきましょう。<br>
+            よろしくお願いします！
+    </p>
+</section>
+
+           
+   <button onclick="showContact()">連絡先を見る</button>
+
+<div id="profilePage">
+    <!-- ここにプロフィール情報が入る（既存の自己紹介ページ部分） -->
+</div>
+<div id="contactPage" style="display:none;">
+    <h2>連絡先</h2>
+    <p>メール: <a href="mailto:y-narita@sansou.co.jp">y-narita@sansou.co.jp</a></p>
+    <button onclick="showProfile()">プロフィールに戻る</button>
+</div>
+
+
+    <footer>
+        <p>&copy; 2025 成田陽亮</p>
+    </footer>
+<script src="js/js script.js"></script>
+</body>
+</html>
