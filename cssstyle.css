@@ -31,15 +31,20 @@ h2 {
 }
 
 /* プロフィール画像 */
-.profile-pic {
-    width: 480px;
-    height: 480px;
+@media (max-width: 600px) {
+ .profile-pic {
+    width: 90vw;
+    height: 90vw;
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 0 12px #ccc;
     display: block;
     margin: 0 auto 16px auto;
+    max-width: 320px;
+    max-height: 320px;
+ }
 }
+
 
 /* プロフィール表 */
 table {
@@ -188,3 +193,57 @@ a[href^="mailto:"] {
     color: #1976d2;
     text-decoration: underline dotted;
 }
+
+/* 基本：画像とテーブルの幅を最大100%に */
+img, table {
+    max-width: 100%;
+    height: auto;
+}
+
+/* セクションの横幅もスマホでは狭く */
+section, .favorite, .horizontal-timeline {
+    width: 95%;
+    min-width: 0;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+// 横スクロールを許可
+table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+    min-width: 260px;
+}
+
+
+/* 横並びタイムラインを縦並びにする（スマホ画面） */
+@media (max-width: 700px) {
+    .horizontal-timeline {
+        flex-direction: column;
+        align-items: stretch;
+        min-height: 0;
+    }
+    .event {
+        min-width: unset;
+        margin-bottom: 32px;
+        text-align: center;
+    }
+    .event-label {
+        margin-top: 8px;
+        margin-bottom: 12px;
+    }
+    .event-icon {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* フォントや見出しも縮小 */
+@media (max-width: 480px) {
+    h1 { font-size: 1.3em; }
+    h2 { font-size: 1.05em; }
+    table, ul, ol, section { font-size: 0.95em; }
+}
+
+
