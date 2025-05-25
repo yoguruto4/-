@@ -1,4 +1,4 @@
-/* === ベース全体 === */
+/* ページ全体の背景とフォント */
 body {
     background-color: #f5f7fa;
     font-family: 'Yu Gothic', 'Meiryo', sans-serif;
@@ -7,7 +7,7 @@ body {
     padding: 0;
 }
 
-/* === ヘッダー === */
+/* ヘッダー */
 header {
     background-color: #2196f3;
     color: white;
@@ -15,6 +15,8 @@ header {
     padding: 24px 0 16px 0;
     margin-bottom: 32px;
 }
+
+/* 見出し */
 h1 {
     font-size: 2.4em;
     letter-spacing: 0.1em;
@@ -28,12 +30,10 @@ h2 {
     color: #1565c0;
 }
 
-/* === プロフィール画像 === */
+/* プロフィール画像 */
 .profile-pic {
-    width: 100%;
-    height:100%;
-    max-width: 320px;
-    height: auto;
+    width: 480px;
+    height: 480px;
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 0 12px #ccc;
@@ -41,16 +41,13 @@ h2 {
     margin: 0 auto 16px auto;
 }
 
-/* === プロフィール表 === */
+/* プロフィール表 */
 table {
     width: 80%;
-    min-width: 260px;
     margin: 0 auto 24px auto;
     border-collapse: collapse;
     background-color: #fff;
     box-shadow: 0 0 8px #e0e0e0;
-    display: block;
-    overflow-x: auto;
 }
 th, td {
     padding: 12px 16px;
@@ -60,105 +57,111 @@ th {
     background-color: #e3f2fd;
     text-align: left;
 }
-
-/* === セクションの基本幅 === */
-section, .favorite, .horizontal-timeline {
-    width: 80%;
-    min-width: 0;
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
-}
-
-/* === タイムライン === */
 .horizontal-timeline {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    position: relative;
-    margin: 32px auto 40px auto;
-    width: 90%;
-    max-width: 900px;
-    min-height: 180px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  margin: 32px auto 40px auto;
+  width: 90%;
+  max-width: 900px;
+  min-height: 180px;
 }
+
 .horizontal-timeline:before {
-    content: "";
-    position: absolute;
-    top: 75%;
-    left: 5%;
-    right: 5%;
-    height: 4px;
-    background: #eee;
-    z-index: 0;
-    border-radius: 2px;
+  content: "";
+  position: absolute;
+  top: 75%;
+  left: 5%;
+  right: 5%;
+  height: 4px;
+  background: #eee;
+  z-index: 0;
+  border-radius: 2px;
 }
+
 .event {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1 1 0;
-    position: relative;
-    min-width: 120px;
-    z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 0;
+  position: relative;
+  min-width: 120px;
+  z-index: 1;
 }
+
 .event-label {
-    background: #fff;
-    color: #888;
-    border: 2px solid #bbb;
-    border-radius: 12px;
-    padding: 3px 14px;
-    font-size: 1em;
-    margin-top: 12px;
-    font-weight: bold;
-    box-shadow: 0 1px 4px #ddd;
+  background: #fff;
+  color: #888;
+  border: 2px solid #bbb;
+  border-radius: 12px;
+  padding: 3px 14px;
+  font-size: 1em;
+  margin-top: 12px;
+  font-weight: bold;
+  box-shadow: 0 1px 4px #ddd;
 }
+
 .event-title {
-    font-size: 1.1em;
-    font-weight: bold;
-    margin-bottom: 3px;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 3px;
 }
+
 .event-desc {
-    font-size: 0.95em;
-    text-align: center;
-    color: #555;
+  font-size: 0.95em;
+  text-align: center;
+  color: #555;
 }
-.event:before {
-    content: "";
-    display: block;
-    width: 18px;
-    height: 18px;
+
+.event.work:before {
+    display: none;  /* オレンジ丸を消す */
+}
+.event.work .event-icon {
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    background: #2196f3;
-    border: 3px solid #fff;
-    box-shadow: 0 0 0 3px #2196f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 8px;
     position: relative;
     z-index: 2;
+    overflow: hidden;
 }
+.event.work .event-icon img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
 .event.highschool:before { background: #43a047; box-shadow: 0 0 0 3px #43a047;}
 .event.univ:before { background: #fbc02d; box-shadow: 0 0 0 3px #fbc02d;}
 .event.work:before { background: #f57c00; box-shadow: 0 0 0 3px #f57c00;}
 .event.born:before { background: #1976d2; box-shadow: 0 0 0 3px #1976d2;}
 .event-title { margin-top: 0; }
 
-/* === 好きなものセクション === */
-section.favorite {
-    background: linear-gradient(90deg, #e3f2fd 50%, #fff 100%);
-    padding: 18px 32px;
-    border-radius: 16px;
-    margin: 16px auto;
-    width: 80%;
-    text-align: left;
-}
 
-/* === ul, ol 共通スタイル === */
+/* ul, ol 共通スタイル */
 ul, ol {
     width: 80%;
     margin: 0 auto 16px auto;
     padding-left: 40px;
 }
 
-/* === メッセージ部分 === */
+/* 「好きなもの」セクションだけに色を付ける（クラスセレクタ例） */
+section.favorite {
+    background: linear-gradient(90deg, #e3f2fd 50%, #fff 100%);
+    padding: 18px 32px;
+    border-radius: 16px;
+    margin: 16px auto;
+    width: 80%;
+    text-align: left;  
+}
+
+/* メッセージ部分の装飾（idセレクタ例） */
 #message {
     font-style: italic;
     font-size: 1.1em;
@@ -170,7 +173,7 @@ ul, ol {
     border-radius: 12px;
 }
 
-/* === フッター === */
+/* フッター */
 footer {
     background-color: #eeeeee;
     color: #222;
@@ -180,57 +183,8 @@ footer {
     font-size: 0.95em;
 }
 
-/* === メールリンク装飾 === */
+/* メールリンク装飾（属性セレクタ例） */
 a[href^="mailto:"] {
     color: #1976d2;
     text-decoration: underline dotted;
-}
-
-/* === 画像とテーブルは最大100%幅 === */
-img, table {
-    max-width: 100%;
-    height: auto;
-}
-
-/* === レスポンシブ（スマホ対応） === */
-@media (max-width: 700px) {
-    h1 {
-        font-size: 1.5em;
-    }
-    h2 {
-        font-size: 1.1em;
-        padding-left: 8px;
-    }
-    section, .favorite, .horizontal-timeline, table, ul, ol {
-        width: 98%;
-        font-size: 1em;
-        min-width: 0;
-    }
-    .horizontal-timeline {
-        flex-direction: column;
-        align-items: stretch;
-        min-height: 0;
-        width: 98%;
-    }
-    .event {
-        min-width: unset;
-        margin-bottom: 32px;
-        text-align: center;
-    }
-    .event-label {
-        margin-top: 8px;
-        margin-bottom: 12px;
-    }
-    .event-icon {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .profile-pic {
-        max-width: 90vw;
-    }
-}
-@media (max-width: 480px) {
-    h1 { font-size: 1.1em; }
-    h2 { font-size: 1em; }
-    table, ul, ol, section { font-size: 0.92em; }
 }
