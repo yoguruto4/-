@@ -1,8 +1,8 @@
 // プロフィール画像をクリックしたときの動き 追加可能
 const imageList = [
-    "img/IMG_7503.jpg",
-    "img/IMG_1885.JPG",
-    "img/IMG_0973.JPG"
+    "IMG_7503.jpg",
+    "IMG_1885.JPG",
+    "IMG_0973.JPG"
 ];
 // 画像ごとのobject-position設定
 const imagePositionList = [
@@ -74,8 +74,8 @@ function closeGameDetail() {
 }
 // 画像パスを配列で用意  LOL
 const lolImages = [
-  "img/20221211201654.png",   // YONE
-  "img/EGS_LeagueofLegends_RiotGames_S1_2560x1440-80471666c140f790f28dff68d72c384b.jpg",  // 2枚目
+  "20221211201654.png",   // YONE
+  "EGS_LeagueofLegends_RiotGames_S1_2560x1440-80471666c140f790f28dff68d72c384b.jpg",  // 2枚目
   
 ];
 
@@ -90,8 +90,8 @@ setInterval(() => {
 
 
 const MhImages = [
-  "img/22b81c7c1b280be4d2586529fc086646fd5d3912c95f74f8.avif",
-  "img/20170920-mhw-01.webp"
+  "22b81c7c1b280be4d2586529fc086646fd5d3912c95f74f8.avif",
+  "20170920-mhw-01.webp"
 ];
 let MhIndex = 0;
 const MhImgElem = document.getElementById("MhImage");
@@ -101,8 +101,8 @@ setInterval(() => {
 }, 3000);
 
 const ST6Images = [
-  "img/13450-3485-286bd8e59ebb16bfb9debb703cef52a6-2000x1125.webp",
-  "img/sns.jpg"
+  "13450-3485-286bd8e59ebb16bfb9debb703cef52a6-2000x1125.webp",
+  "sns.jpg"
 ];
 let ST6Index = 0;
 const ST6ImgElem = document.getElementById("ST6Image");
