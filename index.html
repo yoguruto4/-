@@ -1,19 +1,20 @@
-
-
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <title>成田陽亮 自己紹介</title>
-<link rel="stylesheet" href="cssstyle.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="css/cssstyle.css">
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
 
 
 </head>
 
 
+
+
 <body>
+    <div id="top"></div>
     <header>
         <h1>自己紹介 - 成田陽亮</h1>
         <p>株式会社サンソウシステムズ 新入社員</p>
@@ -22,15 +23,15 @@
 
     <!-- プロフィール画像 -->
     <section>
-       <img src="IMG_7503.jpg" alt="成田陽亮の写真" class="profile-pic" id="profilePic">
+        <img src="img/IMG_7503.jpg" alt="成田陽亮の写真" class="profile-pic" id="profilePic">
 
 
     </section>
 
     <!-- プロフィール表 -->
-    <section>
+    <section class="profile-table-wrap">
         <h2>プロフィール</h2>
-        <table border="1">
+        <table>
             <tr>
                 <th>名前</th>
                 <td>成田 陽亮（Narita Yosuke）</td>
@@ -59,35 +60,35 @@
     </section>
 
     <section>
-  <h2>経歴の概要</h2>
-  <div class="horizontal-timeline">
-    <div class="event born">
-      <div class="event-title">生まれ</div>
-      <div class="event-desc">東京都で生まれる</div>
-      <div class="event-label">2001</div>
-    </div>
-    <div class="event highschool">
-      <div class="event-title">高校卒業</div>
-      <div class="event-desc">東京都立某高等学校を卒業</div>
-      <div class="event-label">2018</div>
-    </div>
-    <div class="event univ">
-      <div class="event-title">大学卒業</div>
-      <div class="event-desc">神奈川県の某私立大学<br>法学部卒業</div>
-      <div class="event-label">2024</div>
-    </div>
-    <div class="event work">
-  <!-- ▼ここにロゴ画像を追加 -->
-  <div class="event-icon">
-<a href="https://www.sansou.co.jp/" target="_blank" rel="noopener" class="event-icon">
-  <img src="294901023_416992047114274_794512046332877522_n.jpg" alt="Sansou Logo">
-</a>
-  </div>
-  <div class="event-title">入社</div>
-  <div class="event-desc">株式会社サンソウシステムズに入社</div>
-  <div class="event-label">2025</div>
-</div>
-</section>
+        <h2>経歴の概要</h2>
+        <div class="horizontal-timeline">
+            <div class="event born">
+                <div class="event-title">生まれ</div>
+                <div class="event-desc">東京都で生まれる</div>
+                <div class="event-label">2001</div>
+            </div>
+            <div class="event highschool">
+                <div class="event-title">高校卒業</div>
+                <div class="event-desc">東京都立某高等学校を卒業</div>
+                <div class="event-label">2020</div>
+            </div>
+            <div class="event univ">
+                <div class="event-title">大学卒業</div>
+                <div class="event-desc">神奈川県の某私立大学<br>法学部卒業</div>
+                <div class="event-label">2024</div>
+            </div>
+            <div class="event work">
+                <!-- ▼ここにロゴ画像を追加 -->
+                <div class="event-icon">
+                    <a href="https://www.sansou.co.jp/" target="_blank" rel="noopener" class="event-icon">
+                        <img src="img/294901023_416992047114274_794512046332877522_n.jpg" alt="Sansou Logo">
+                    </a>
+                </div>
+                <div class="event-title">入社</div>
+                <div class="event-desc">株式会社サンソウシステムズに入社</div>
+                <div class="event-label">2025</div>
+            </div>
+    </section>
 
 
     <!-- 性格 -->
@@ -102,15 +103,96 @@
     </section>
 
     <!-- ①「好きなものを追加」ボタンでリストが増える -->
-<h2>好きなもの</h2>
-<section class="favorite">
-    <ul id="favoriteList">
-        <li>ゲーム（主にPCゲーム）</li>
-        <li>音楽を聴くこと（Mrs.GreeenAppleなど）</li>
-        <li>お酒を飲むこと（ハイボールが大好き）</li>
+    <section class="favorite">
+        <h2 class="favorite-title">好きなもの</h2>
+        <div class="favorite-card">
+            <ul id="favoriteList">
+                <li id="gameItem" class="clickable-game">ゲーム（主にPCゲーム）</li>
+                <li id="youtubeItem" class="clickable-youtube">Youtubeや配信を見る</li>
+                <li>音楽を聴くこと（Mrs.GreeenAppleなど）</li>
+                <li>お酒を飲むこと（ハイボールが大好き）</li>
+            </ul>
+            <button onclick="addFavorite()">好きなものを追加</button>
+        </div>
+    </section>
+
+    <!-- ゲーム詳細（最初は非表示） -->
+<div id="gameDetail"
+     style="display: none; position: fixed; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.4); z-index:999;">
+  <div style="background:#fff; max-width:600px; margin: 64px auto; padding:32px; border-radius:16px; position:relative; max-height:80vh; overflow-y:auto;">
+    <button onclick="closeGameDetail()" class="close-btn" id="closeGameBtn">×</button>
+
+    <h3>ゲームが好きな理由</h3>
+    <p>
+      主にPCゲームが好きです。<br>
+      FPS、RPG、ストラテジーなど幅広く遊びます。<br>
+      <h4>好きなゲーム紹介 </h4> 
+      <span style="font-weight: bold; color: #222;">『League of Legends』</span>
+      <img id="lolImage" src="img/20221211201654.png" alt="YONE" class="fixed-game-img">
+      <br>
+      <span style="font-weight: bold; color: #222;">『モンスターハンター』</span>
+      <img id="MhImage" src="img/22b81c7c1b280be4d2586529fc086646fd5d3912c95f74f8.avif" alt="Mhw"  class="fixed-game-img">
+      <br>
+      <span style="font-weight: bold; color: #222;">『ストリートファイター6』</span>
+      <img id= "ST6Image"src="img/13450-3485-286bd8e59ebb16bfb9debb703cef52a6-2000x1125.webp" alt="ST6"  class="fixed-game-img">
+    </p>
+  </div>
+</div>
+
+<div id="youtubeDetail"
+     style="display: none; position: fixed; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.4); z-index:999;">
+  <div style="background:#fff; max-width:480px; margin: 64px auto; padding:24px; border-radius:14px; position:relative; max-height:80vh; overflow-y:auto;">
+<button onclick="closeYoutubeDetail()" class="close-btn-youtube">×</button>
+
+    <h3>好きなYouTuber・配信者</h3>
+    <ul class="youtuber-list">
+      <li>
+        <a href="https://www.youtube.com/@darumaisgod" target="_blank">
+          <img src="img/VxXbNxF2_400x400.jpg" alt="だるまいずごっど" class="youtuber-thumb">
+        </a><br>
+        <strong>だるまいずごっど</strong>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/channel/UCSFCh5NL4qXrAy9u-u2lX3g" target="_blank">
+          <img src="img/j61CdEPG_400x400.png" alt="葛葉" class="youtuber-thumb">
+        </a><br>
+        <strong>葛葉(Kuzuha Channel)</strong>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/@zzxk4sen" target="_blank">
+          <img src="img/bo0_P9jU.png" alt="K4sen" class="youtuber-thumb">
+        </a><br>
+        <strong>K4sen</strong>
+      </li>
+
+        <li>
+      <a href="https://www.youtube.com/@SHAKAch" target="_blank">
+          <img src="img/bEE1YV-7_400x400.jpg" alt="釈迦" class="youtuber-thumb">
+        </a><br>
+        <strong>釈迦</strong>
+      </li>
+
+      <li>
+        <a href="https://www.youtube.com/@Jasper7se." target="_blank">
+          <img src="img/ujzSuTZR_400x400.jpg" alt="Jasper7se" class="youtuber-thumb">
+        </a><br>
+        <strong>Jasper7se</strong>
+      </li>
+
+      <li>
+      <a href="https://www.youtube.com/@StanSmith_JP" target="_blank">
+          <img src="img/La8V0Hvy_400x400.jpg" alt="スタンミ" class="youtuber-thumb">
+        </a><br>
+        <strong>スタンミ</strong>
+      </li>
     </ul>
-    <button onclick="addFavorite()">好きなものを追加</button>
-</section>
+    <p>画像をクリックするとYouTubeチャンネルへ移動します。<br>
+    他にも、LoLやストリーマー系配信者もよく見ています！</p>
+  </div>
+</div>
+
+
+
 
 
 
@@ -126,32 +208,34 @@
 
     <!-- メッセージ -->
     <section>
-<section>
-    <h2>メッセージ</h2>
-    <p id="message">
-       新入社員として一緒に働くことになり、とても嬉しく思います。<br>
-            そして、この会社での新たな挑戦に胸を膨らませており、皆さんと共に成長していけることを楽しみにしています。<br>
-            失敗や挫折もあるかもしれませんが、その度に一緒に立ち向かい、共に成長していきましょう。<br>
-            よろしくお願いします！
-    </p>
-</section>
-
-           
-   <button onclick="showContact()">連絡先を見る</button>
-
-<div id="profilePage">
-    <!-- ここにプロフィール情報が入る（既存の自己紹介ページ部分） -->
-</div>
-<div id="contactPage" style="display:none;">
-    <h2>連絡先</h2>
-    <p>メール: <a href="mailto:y-narita@sansou.co.jp">y-narita@sansou.co.jp</a></p>
-    <button onclick="showProfile()">プロフィールに戻る</button>
-</div>
+        <section>
+            <h2>メッセージ</h2>
+            <p id="message">
+                新入社員として一緒に働くことになり、とても嬉しく思います。<br>
+                そして、この会社での新たな挑戦に胸を膨らませており、皆さんと共に成長していけることを楽しみにしています。<br>
+                失敗や挫折もあるかもしれませんが、その度に一緒に立ち向かい、共に成長していきましょう。<br>
+                よろしくお願いします！
+            </p>
+        </section>
 
 
-    <footer>
-        <p>&copy; 2025 成田陽亮</p>
-    </footer>
-<script src="jsscript.js"></script>
+        <button onclick="showContact()">連絡先を見る</button>
+
+        <div id="profilePage">
+            <!-- ここにプロフィール情報が入る（既存の自己紹介ページ部分） -->
+        </div>
+        <div id="contactPage" style="display:none;">
+            <h2>連絡先</h2>
+            <p>メール: <a href="mailto:y-narita@sansou.co.jp">y-narita@sansou.co.jp</a></p>
+            <button onclick="showProfile()">プロフィールに戻る</button>
+        </div>
+
+
+        <footer>
+            <p>&copy; 2025 成田陽亮</p>
+        </footer>
+        <script src="js/js script.js"></script>
+         <a href="#top" class="pagetop-btn">▲ トップへ</a>
 </body>
+
 </html>
